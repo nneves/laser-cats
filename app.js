@@ -1,6 +1,7 @@
 var bot = require("./laserdrone");
 var keypress = require('keypress');
-var five = require("johnny-five");
+
+
 
 keypress(process.stdin);
 
@@ -25,7 +26,11 @@ process.stdin.on('keypress', function (ch, key) {
     case "p":
       bot.right();
       break;
+    case "b":
+      bot.toggle();
+      break;
     default:
+      console.log(key.name);
       break;
   }
 });
